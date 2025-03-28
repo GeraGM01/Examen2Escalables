@@ -1,12 +1,3 @@
-<!-- <div class="{{isSelected ? 'selected' : ''}}"> -->
-<!-- <div [ngClass]="{'selected': isSelected}">
-    <img [src]="show.image" alt="">
-    <button (click)="onDelete()" style="float: right;">x</button>
-    <h2>{{show.name}}</h2>
-    <p>{{show.description != "" ? show.description : "Sin descripción"}}</p>
-    <button (click)="onSelected()">{{isSelected ? "Deseleccionar" : "Seleccionar"}}</button>
-</div> -->
-
 <mat-card class="card-container" [ngClass]="{'selected': isSelected}" appearance="outlined">
     <mat-card-header>
         <mat-card-title>{{show!.name}}</mat-card-title>
@@ -20,5 +11,6 @@
     <mat-card-actions>
         <button (click)="onSelected()" mat-button>{{isSelected ? "DESELECCIONAR" : "SELECCIONAR"}}</button>
         <button (click)="onDelete()" mat-button>ELIMINAR</button>
+        <button [routerLink]="['/tv-show-details', show!.name]" mat-button>VER DETALLES</button>
     </mat-card-actions>
 </mat-card>

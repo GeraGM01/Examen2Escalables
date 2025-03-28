@@ -1,25 +1,3 @@
-<!-- <form #form="ngForm" (ngSubmit)="createNewTvShow(form)">
-    <h1>Crear nuevo tv show</h1>
-    <mat-form-field>
-        <mat-label>Nombre</mat-label>
-        <input name="name" required ngModel matInput>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Descripción</mat-label>
-        <textarea name="description" required ngModel matInput></textarea>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Imagen</mat-label>
-        <input name="image" required ngModel matInput>
-    </mat-form-field>
-    <button type="submit" mat-raised-button>Crear</button>
-    @if(!form.valid && form.submitted){
-    <div style="color: red;">
-        Datos incompletos
-    </div>
-    }
-</form> -->
-
 <form [formGroup]="form" (ngSubmit)="createNewTvShow()">
     <h1>Crear nuevo tv show</h1>
     <mat-form-field>
@@ -33,6 +11,24 @@
     <mat-form-field>
         <mat-label>Imagen</mat-label>
         <input formControlName="image" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Género</mat-label>
+        <mat-select formControlName="genre">
+            <mat-option value="Drama">Drama</mat-option>
+            <mat-option value="Comedia">Comedia</mat-option>
+            <mat-option value="Ciencia Ficción">Ciencia Ficción</mat-option>
+            <mat-option value="Acción">Acción</mat-option>
+            <mat-option value="Fantasía">Fantasía</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Año</mat-label>
+        <input formControlName="year" type="number" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Número de Episodios</mat-label>
+        <input formControlName="episodes" type="number" matInput>
     </mat-form-field>
     <button type="submit" mat-raised-button>Crear</button>
     @if(!form.valid && formSubmitted){

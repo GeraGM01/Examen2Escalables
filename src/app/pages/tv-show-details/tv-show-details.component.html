@@ -1,1 +1,18 @@
-<p>Detalles del programa {{showName}}</p>
+<div *ngIf="show" class="details-container">
+    <mat-card class="show-details-card">
+      <mat-card-header>
+        <mat-card-title>{{ show.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="show.image" [alt]="show.name">
+      <mat-card-content>
+        <p><strong>Descripción:</strong> {{ show.description }}</p>
+        <p><strong>Género:</strong> {{ show.genre }}</p>
+        <p><strong>Año:</strong> {{ show.year }}</p>
+        <p><strong>Número de Episodios:</strong> {{ show.episodes }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div *ngIf="!show" class="not-found">
+    <p>Serie de TV no encontrada</p>
+  </div>
