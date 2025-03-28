@@ -1,0 +1,15 @@
+<h1>Shows de television</h1>
+
+
+<mat-form-field>
+    <input matInput placeholder="Nombre" required [(ngModel)]="querySearch" />
+</mat-form-field>
+<button (click)="onSearch()" mat-raised-button>Buscar</button>
+
+
+<div class="shows-container">
+    <app-show-card *ngFor="let show of shows" [show]="show" (onDeleteEvent)="deleteByName($event)"></app-show-card>
+</div>
+
+<app-controls (deleteByIndexEvent)="deleteByIndex($event)" (deleteLastEvent)="deleteLast()"
+    (orderByNameEvent)="orderByName()"></app-controls>

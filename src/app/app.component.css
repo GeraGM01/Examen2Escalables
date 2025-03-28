@@ -1,0 +1,18 @@
+.main-container {
+    width: auto;
+    height: 100vh;
+    border: 1px solid #555;
+    background: #eee;
+}
+
+a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: aqua;
+}
+
+.page-container {
+    padding: 0 15px;
+}

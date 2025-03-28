@@ -1,0 +1,15 @@
+<mat-drawer-container class="main-container">
+    <mat-drawer mode="side" opened>
+        <mat-list>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="./home">Home</a></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="./new-tv-show">New Tv Show</a>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content class="page-container">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
